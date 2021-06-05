@@ -25,5 +25,16 @@ for cg in ${cgroups}; do
   fi
 done
 
+# Run another premounter
+
+if ! mountpoint -q /sys/fs/cgroup 2>/dev/null; then
+  mount -t tmpfs -o mode=755 tmpfs /sys/fs/cgroup
+fi
+
+if ! mountpoint -q /sys/fs/cgroup/devices 2>/dev/null; then
+  mkdir -p /sys/fs/cgroup/devices
+  mount -t cgroup -o devices cgroup /sys/fs/cgroup/devices
+fi
+
 # start the docker daemon
 "@TERMUX_PREFIX@/libexec/dockerd" $@
