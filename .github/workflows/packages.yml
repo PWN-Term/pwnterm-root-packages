@@ -128,15 +128,3 @@ jobs:
       with:
         name: termux-root-packages-${{ github.sha }}
         path: ./artifacts
-  upload:
-    if: github.event_name != 'pull_request'
-    needs: build
-    runs-on: ubuntu-latest
-    steps:
-    - name: Clone repository
-      uses: actions/checkout@v2
-    - name: Get *.deb files
-      uses: actions/download-artifact@v2
-      with:
-        name: termux-root-packages-${{ github.sha }}
-        path: ./
