@@ -1,6 +1,6 @@
 # Termux root packages
 
-[![Last build status](https://github.com/termux/termux-root-packages/workflows/Packages/badge.svg)](https://github.com/termux/termux-root-packages/actions)
+[![Last build status](https://github.com/PWN-Term/pwnterm-root-packages/workflows/Packages/badge.svg)](https://github.com/PWN-Term/pwnterm-root-packages/actions)
 
 This repository contains packages that are only useful for rooted users.
 
